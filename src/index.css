@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-bg-primary: #F7F6F2; /* Off-white / light cream */
+  --color-bg-secondary: #EFECE5; /* Sand beige / stone */
+  --color-bg-tertiary: #E5E7EB; /* Very light gray */
+  
+  --color-text-primary: #2C303A; /* Anthracite / dark slate */
+  --color-text-secondary: #6B7280; /* Soft gray */
+  --color-text-muted: #9CA3AF;
+  
+  --color-accent-primary: #5E7E88; /* Desaturated blue/greenish */
+  --color-accent-secondary: #8BA3AB; /* Lighter accent */
+  --color-accent-earth: #D5CABD; /* Light earth tone */
+
+  --color-border-light: rgba(44, 48, 58, 0.1);
+  --color-border-medium: rgba(44, 48, 58, 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased selection:bg-accent-primary selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-normal tracking-tight text-text-primary;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-md border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)];
+  }
+  
+  .map-pattern {
+    background-image: radial-gradient(var(--color-border-light) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
